@@ -1,3 +1,5 @@
+/* RESETS AND BASICS*/
+
 html, body {
   margin: 0;
   padding: 0;
@@ -19,6 +21,15 @@ h2 {
   font-weight: 1000;
 }
 
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  
+}
 
 .side-nav {
   width: 15%;
@@ -94,6 +105,10 @@ h2 {
   width: 75%;
   margin-left: 25%;
   height: 100%;
+  scroll-snap-type: y mandatory;
+  &.proximity {
+    scroll-snap-type: y proximity;
+  }
 }
 
 .section {
@@ -101,12 +116,28 @@ h2 {
     display: flex;
     position: relative;
     align-items: center;
-    
+    overflow-y: scroll;
+    scroll-snap-align: start;
+
   .section-content {
     background-color: white;
     padding: 0.5em 2em;
     max-width: 95%;
-    max-height: 50%;
+    width: 95%;
+    max-height: 70%;
+    overflow-y: scroll;
+
+    .section-content__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      grid-gap: 10px;
+      background-color: blue;
+
+      .section-content__grid-card {
+        padding-bottom: 56.25%;
+        background-color: red;
+      }
+    }
   }
 
   .faded-header {
@@ -126,5 +157,6 @@ h2 {
     font-size: 2em;
     width: 80%;
     opacity: 0.8;
+    line-height: 160%;
   }
 }

@@ -1,3 +1,4 @@
+/* RESETS AND BASICS*/
 html, body {
   margin: 0;
   padding: 0;
@@ -17,6 +18,15 @@ h1 {
 h2 {
   font-size: 2em;
   font-weight: 1000;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  width: 0px;
 }
 
 .side-nav {
@@ -108,6 +118,13 @@ h2 {
   width: 75%;
   margin-left: 25%;
   height: 100%;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+.main.proximity {
+  -ms-scroll-snap-type: y proximity;
+      scroll-snap-type: y proximity;
 }
 
 .section {
@@ -119,13 +136,31 @@ h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow-y: scroll;
+  scroll-snap-align: start;
 }
 
 .section .section-content {
   background-color: white;
   padding: 0.5em 2em;
   max-width: 95%;
-  max-height: 50%;
+  width: 95%;
+  max-height: 70%;
+  overflow-y: scroll;
+}
+
+.section .section-content .section-content__grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  background-color: blue;
+}
+
+.section .section-content .section-content__grid .section-content__grid-card {
+  padding-bottom: 56.25%;
+  background-color: red;
 }
 
 .section .faded-header {
@@ -141,5 +176,6 @@ h2 {
   font-size: 2em;
   width: 80%;
   opacity: 0.8;
+  line-height: 160%;
 }
 /*# sourceMappingURL=style.css.map */
