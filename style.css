@@ -9,6 +9,8 @@ body {
   height: 100vh;
   width: 100vw;
   font-family: "Raleway", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 h1 {
@@ -265,8 +267,6 @@ p {
 }
 
 .section-content__contact .contact-form {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -283,6 +283,9 @@ p {
 
 .section-content__contact .contact-form input,
 .section-content__contact .contact-form textarea {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 1em;
   width: 100%;
   border: 2px solid rgba(0, 0, 0, 0);
@@ -297,6 +300,17 @@ p {
   border: 2px solid black;
 }
 
+.section-content__contact .contact-form input[type="submit"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  margin-top: 1em;
+  padding: 1em;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .section-content__contact .contact-info {
   width: 45%;
   min-width: 350px;
@@ -304,6 +318,17 @@ p {
 
 .section-content__contact .contact-info p {
   margin: 0.3em 0 1.5em;
+}
+
+.primary-btn {
+  background-color: black;
+  color: white;
+  border: none !important;
+  cursor: pointer;
+}
+
+.primary-btn:active {
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #home-section p {
