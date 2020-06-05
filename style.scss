@@ -60,7 +60,7 @@ p {
   margin-top: 2em;
 }
 
-.margin-y__1em {
+.margin-y__2em {
   margin: 2em 0;
 }
 
@@ -191,7 +191,7 @@ p {
     }
 
     h4 {
-      margin-left: 1em;
+      margin: 1em;
     }
   }
 
@@ -214,6 +214,10 @@ p {
       max-width: 45%;
       min-width: 300px;
     }
+
+    h4 {
+      margin: 1em 0;
+    }
   }
 
   .faded-header {
@@ -235,6 +239,10 @@ p {
     flex-direction: column;
     width: 45%;
     min-width: 350px;
+
+    h4 {
+      margin-bottom: 1.5em;
+    }
 
     label {
       font-size: 0.8em;

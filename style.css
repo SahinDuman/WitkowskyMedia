@@ -62,7 +62,7 @@ p {
   margin-top: 2em;
 }
 
-.margin-y__1em {
+.margin-y__2em {
   margin: 2em 0;
 }
 
@@ -219,7 +219,7 @@ p {
 }
 
 .section .section-content__grid-card h4 {
-  margin-left: 1em;
+  margin: 1em;
 }
 
 .section .section-content__about-profile {
@@ -248,6 +248,10 @@ p {
   min-width: 300px;
 }
 
+.section .section-content__about h4 {
+  margin: 1em 0;
+}
+
 .section .faded-header {
   position: absolute;
   top: 2rem;
@@ -273,6 +277,10 @@ p {
           flex-direction: column;
   width: 45%;
   min-width: 350px;
+}
+
+.section-content__contact .contact-form h4 {
+  margin-bottom: 1.5em;
 }
 
 .section-content__contact .contact-form label {
