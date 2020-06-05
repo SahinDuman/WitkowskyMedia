@@ -1,6 +1,7 @@
 /* RESETS AND BASICS*/
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -8,7 +9,7 @@ html, body {
 body {
   height: 100vh;
   width: 100vw;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 h1 {
@@ -21,6 +22,21 @@ h2 {
   font-weight: 1000;
 }
 
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h4,
+h5,
+p {
+  padding: 0;
+  margin: 0;
+}
+
 .hide-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -28,8 +44,30 @@ h2 {
   &::-webkit-scrollbar {
     width: 0px;
   }
-  
 }
+
+/* ALIGN AND SPACE*/
+.flex {
+  display: flex;
+}
+
+.margin-top__10p {
+  margin-top: 10%;
+}
+
+.margin-top__5em {
+  margin-top: 2em;
+}
+
+.margin-y__1em {
+  margin: 2em 0;
+}
+
+.padding-bottom__1em {
+  padding-bottom: 1em;
+}
+
+/*STYLE*/
 
 .side-nav {
   width: 15%;
@@ -63,7 +101,7 @@ h2 {
       font-size: 1em;
       margin: 0.5em 0;
       cursor: pointer;
-      
+
       span {
         border-bottom: 1px solid transparent;
       }
@@ -112,45 +150,121 @@ h2 {
 }
 
 .section {
-    height: 100%;
-    display: flex;
-    position: relative;
-    align-items: center;
-    overflow-y: scroll;
-    scroll-snap-align: start;
+  height: 100%;
+  display: flex;
+  position: relative;
+  align-items: center;
+  overflow-y: scroll;
+  scroll-snap-align: start;
 
   .section-content {
     background-color: white;
     padding: 0.5em 2em;
     max-width: 95%;
     width: 95%;
-    max-height: 70%;
+    max-height: 80%;
     overflow-y: scroll;
 
     .section-content__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      grid-gap: 10px;
-      background-color: blue;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-gap: 2em;
+    }
+  }
 
-      .section-content__grid-card {
-        padding-bottom: 56.25%;
-        background-color: red;
+  .section-content__grid-card {
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.1);
+
+    .grid-card__thumbnail-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
       }
+    }
+
+    h4 {
+      margin-left: 1em;
+    }
+  }
+
+  .section-content__about-profile {
+    align-items: center;
+
+    img {
+      width: 10em;
+      height: 10em;
+      border-radius: 50%;
+      margin: 1em;
+    }
+  }
+
+  .section-content__about {
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    div {
+      max-width: 45%;
+      min-width: 300px;
     }
   }
 
   .faded-header {
     position: absolute;
-    top: 4rem;
-    left: 30%;
-    font-size: 5em;
+    top: 2rem;
+    right: 5%;
+    font-size: 4em;
     font-weight: 1000;
     opacity: 0.1;
   }
-  
 }
 
+.section-content__contact {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1em 0;
+
+  .contact-form {
+    box-sizing: border-box;
+    flex-direction: column;
+    width: 45%;
+    min-width: 350px;
+
+    label {
+      font-size: 0.8em;
+      font-weight: 600;
+      margin: 1em 0 0.5em;
+    }
+
+    input,
+    textarea {
+      padding: 1em;
+      width: 100%;
+      border: 2px solid rgba(0, 0, 0, 0);
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+
+      &:focus {
+        box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+        border: 2px solid rgba(0, 0, 0, 1);
+      }
+    }
+  }
+
+  .contact-info {
+    width: 45%;
+    min-width: 350px;
+
+    p {
+      margin: 0.3em 0 1.5em;
+    }
+  }
+}
 
 #home-section {
   p {
